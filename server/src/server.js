@@ -66,9 +66,13 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`=================================================`);
-  console.log(`  Doctor Appointment API Server running on port ${PORT}`);
-  console.log(`  Base URL: http://localhost:${PORT}/api/v1`);
-  console.log(`=================================================`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`=================================================`);
+    console.log(`  Doctor Appointment API Server running on port ${PORT}`);
+    console.log(`  Base URL: http://localhost:${PORT}/api/v1`);
+    console.log(`=================================================`);
+  });
+}
+
+module.exports = app;
