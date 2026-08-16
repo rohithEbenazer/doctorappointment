@@ -1,0 +1,16 @@
+{
+  "name": "doctor-appointment-platform",
+  "version": "1.0.0",
+  "description": "Full Hospital Doctor Appointment Platform",
+  "main": "server/src/server.js",
+  "scripts": {
+    "server": "node server/src/server.js",
+    "client": "npm --prefix client run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm --prefix client run build",
+    "start": "node server/src/server.js"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
